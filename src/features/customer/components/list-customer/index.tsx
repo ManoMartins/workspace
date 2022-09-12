@@ -50,23 +50,6 @@ function ListCustomer() {
                                 <ListAction.Details />
                             </Link>
                             <ListAction.Delete onConfirm={() => handleDeleteCustomer(data.id)} />
-                            {/*<IconButton*/}
-                            {/*    onClick={() => handleDeleteCustomer(data.id)}*/}
-                            {/*    aria-label="Trash"*/}
-                            {/*    icon={FiTrash2}*/}
-                            {/*    sx={{*/}
-                            {/*        width: 32,*/}
-                            {/*        height: 32,*/}
-                            {/*        span: {*/}
-                            {/*            display: 'flex',*/}
-                            {/*            alignItems: 'center',*/}
-                            {/*            justifyContent: 'center',*/}
-                            {/*        },*/}
-                            {/*        ':hover': {*/}
-                            {/*            filter: 'brightness(0.95)',*/}
-                            {/*        },*/}
-                            {/*    }}*/}
-                            {/*/>*/}
                         </ListAction>
                     )
                 }
@@ -78,7 +61,7 @@ function ListCustomer() {
         <List>
             <ListHeader title={"Clientes"} buttonHref={"/customers/create"} buttonTitle={"+ Criar cliente"} />
 
-            <ListTable headers={headers} data={getCustomers.data} />
+            <ListTable testId={"table-customers"} headers={headers} data={getCustomers.data} />
         </List>
     )
 }

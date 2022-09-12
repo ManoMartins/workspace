@@ -27,7 +27,7 @@ const BaseDate: ForwardRefRenderFunction<HTMLInputElement, BaseDateProps> = (
       />
 
       {!(error == null) && (
-        <FormControl.Caption>{error.message}</FormControl.Caption>
+        <FormControl.Validation data-testid={`validation-${name}`} variant={"error"}>{error.message}</FormControl.Validation>
       )}
     </FormControl>
   )

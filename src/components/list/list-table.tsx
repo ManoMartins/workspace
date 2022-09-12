@@ -1,5 +1,5 @@
 import { get } from 'lodash'
-import React, { useCallback } from 'react'
+import React, {HTMLProps, useCallback} from 'react'
 import * as S from './styles'
 
 // Styles
@@ -13,16 +13,18 @@ export type TableHeader<T extends Object> = {
   fn?: (value: any, data: T) => any
 }
 
-interface Props<T extends Object> {
+interface Props<T extends Object>{
   data?: T[]
   isLoading?: boolean
   headers: TableHeader<T>[]
+    testId?: string
 }
 
 function ListTable<T extends Object>({
   headers,
   data,
   isLoading,
+     testId,
 }: Props<T>) {
   const getCellValue = useCallback(
     (row: T, accessor: keyof T, fn?: (value: any, data: T) => any) => {
@@ -34,7 +36,7 @@ function ListTable<T extends Object>({
   )
 
   return (
-    <S.Table>
+    <S.Table data-testid={testId}>
       <S.Thead>
         <S.Tr>
           {headers.map(({ label }) => (

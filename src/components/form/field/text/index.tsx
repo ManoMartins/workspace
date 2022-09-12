@@ -26,7 +26,7 @@ const BaseText: ForwardRefRenderFunction<HTMLInputElement, BaseTextProps> = (
       />
 
       {!(error == null) && (
-        <FormControl.Validation variant={"error"}>{error.message}</FormControl.Validation>
+        <FormControl.Validation data-testid={`validation-${name}`} variant={"error"}>{error.message}</FormControl.Validation>
       )}
     </FormControl>
   )
